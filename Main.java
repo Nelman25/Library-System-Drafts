@@ -1,3 +1,5 @@
 public class Main {
-    MainFrame mainFrame = new MainFrame();
+    public static void main(String[] args) {
+        MainFrame mainFrame = new MainFrame();
+    }
 }

@@ -2,12 +2,11 @@ public class Books {
     private String title;
     private String author;
     private String publisher;
-    private int numberOfPages;
-    private int yearPublished;
+    private String numberOfPages;
+    private String yearPublished;
     private String language;
 
-
-    Books(String title, String author, int numberOfPages,String publisher, int yearPublished, String language) {
+    Books(String title, String author, String numberOfPages,String publisher, String yearPublished, String language) {
         this.title = title;
         this.author = author;
         this.numberOfPages = numberOfPages;
@@ -17,23 +16,23 @@ public class Books {
     }
     public String getTitle() {
 
-        return title;
+        return "Title: "+title;
     }
     public String getAuthor() {
 
-        return author;
+        return "Author: "+author;
     }
-    public int getNumberOfPages() {
+    public String getNumberOfPages() {
 
-        return numberOfPages;
+        return "Number of pages: " + numberOfPages;
     }
     public String getPublisher() {
-        return publisher;
+        return "Publisher: "+publisher;
     }
-    public int getYearPublished() {
-        return yearPublished;
+    public String getYearPublished() {
+        return "Year published: " + yearPublished;
     }
     public String getLanguage() {
-        return language;
+        return "Language: "+ language;
     }
 }
