@@ -12,7 +12,8 @@ public class MainFrame implements ActionListener {
     JPanel blueHeader2 = new JPanel();
     JPanel booksContainer = new JPanel();
     JPanel searchArea = new JPanel();
-
+    JTextField searchBar = new JTextField();
+    JButton searchButton = new JButton("Search");
     JButton AtomicHabits = new JButton();
     JButton EgoIsTheEnemy = new JButton();
     JButton StillnessIsTheKey = new JButton();
@@ -21,6 +22,8 @@ public class MainFrame implements ActionListener {
     JButton EatThatFrog = new JButton();
     JButton AuthorPOV = new JButton();
     JButton PsychMoney = new JButton();
+    JButton TBATE = new JButton();
+    JButton ORV = new JButton();
 
     JLabel label = new JLabel();
     JLabel label2 = new JLabel();
@@ -32,8 +35,11 @@ public class MainFrame implements ActionListener {
     ImageIcon SubtleArtImg = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\the-subtle-art-of-not-giving-a-f-ck.jpg");
     ImageIcon ArtOfWarImg = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\the-art-of-war-74.jpg");
     ImageIcon EatThatFrogImg = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\EatThatFrog.jpg");
-    ImageIcon PsychMoneyImg = new ImageIcon("C:\\Users\\Jonel Villaver\\Pictures\\AtomicHabits (1).jpg");
+    ImageIcon PsychMoneyImg = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\PsychMoney.jpg");
     ImageIcon AuthorPOVImg = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\AuthorPOV.jpg");
+    ImageIcon TBATEImg = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\TBATE.jpg");
+    ImageIcon ORVImg = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\ORVImg.png");
+
 
     MainFrame() {
         frame.setTitle("National University Library System");
@@ -66,6 +72,14 @@ public class MainFrame implements ActionListener {
         label2.setFont(new Font("Helvetica",Font.BOLD,17));
         label2.setForeground(new Color(38, 89, 153));
         label2.setBounds(1500,34,250,30);
+
+        searchButton.setFocusable(false);
+        searchArea.setBounds(0,115,1800,45);
+        searchArea.setBackground(new Color(244, 242, 201));
+        searchArea.setLayout(new FlowLayout());
+
+        searchBar.setFont(new Font("Helvetica", Font.PLAIN,20));
+        searchBar.setPreferredSize(new Dimension(400,35));
 
         booksContainer.setLayout(new FlowLayout());
         booksContainer.setBounds(10, 160,1730,750);
@@ -143,6 +157,25 @@ public class MainFrame implements ActionListener {
         PsychMoney.setVerticalTextPosition(JLabel.BOTTOM);
         PsychMoney.setIcon(PsychMoneyImg);
 
+        TBATE.setText("The beginning after the end");
+        TBATE.setBackground(new Color(244, 242, 201));
+        TBATE.setFocusable(false);
+        TBATE.setBorderPainted(false);
+        TBATE.setFont(new Font("Arial",Font.ITALIC,21));
+        TBATE.setHorizontalTextPosition(JLabel.CENTER);
+        TBATE.setVerticalTextPosition(JLabel.BOTTOM);
+        TBATE.setIcon(TBATEImg);
+
+        ORV.setText("Omniscient reader's viewpoint");
+        ORV.setBackground(new Color(244, 242, 201));
+        ORV.setFocusable(false);
+        ORV.setBorderPainted(false);
+        ORV.setFont(new Font("Arial",Font.ITALIC,21));
+        ORV.setHorizontalTextPosition(JLabel.CENTER);
+        ORV.setVerticalTextPosition(JLabel.BOTTOM);
+        ORV.setIcon(ORVImg);
+
+        searchButton.addActionListener(this);
         AtomicHabits.addActionListener(this);
         EgoIsTheEnemy.addActionListener(this);
         StillnessIsTheKey.addActionListener(this);
@@ -151,13 +184,17 @@ public class MainFrame implements ActionListener {
         EatThatFrog.addActionListener(this);
         AuthorPOV.addActionListener(this);
         PsychMoney.addActionListener(this);
+        TBATE.addActionListener(this);
+        ORV.addActionListener(this);
 
-
+        searchArea.add(searchBar);
+        searchArea.add(searchButton);
         yellowHeader.add(label);
         yellowHeader.add(label2);
         frame.add(yellowHeader);
         frame.add(blueHeader);
         frame.add(blueHeader2);
+
         booksContainer.add(AtomicHabits);
         booksContainer.add(EgoIsTheEnemy);
         booksContainer.add(StillnessIsTheKey);
@@ -166,6 +203,8 @@ public class MainFrame implements ActionListener {
         booksContainer.add(EatThatFrog);
         booksContainer.add(AuthorPOV);
         booksContainer.add(PsychMoney);
+        booksContainer.add(TBATE);
+        booksContainer.add(ORV);
 
         frame.add(booksContainer);
         frame.add(searchArea);
@@ -174,23 +213,74 @@ public class MainFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==AtomicHabits) {
+
+        //search functions
+        if(e.getSource() == searchButton) {
+            if (searchBar.getText().equalsIgnoreCase("Atomic Habits")) {
+                AtomicHabitsInfo info = new AtomicHabitsInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("Ego is the enemy")) {
+                EgoIsTheEnemyInfo info = new EgoIsTheEnemyInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("Stillness is the key")) {
+                StillnessIsTheKeyInfo info = new StillnessIsTheKeyInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("Subtle art of not giving a f*ck")) {
+                SubtleArtInfo info = new SubtleArtInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("Art of War")) {
+                ArtOfWarInfo info = new ArtOfWarInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("Eat that frog")) {
+                EatThatFrogInfo info = new EatThatFrogInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("Psychology of Money")) {
+                PsychMoneyInfo info = new PsychMoneyInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("The Beginning After The End")) {
+                TBATEInfo info = new TBATEInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("Omniscient Reader's Viewpoint")) {
+                ORVInfo info =  new ORVInfo();
+            }
+            else if (searchBar.getText().equalsIgnoreCase("The Author's POV")) {
+                AuthorPOVInfo info = new AuthorPOVInfo();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "No results found.");
+            }
+        }
+        //button functions
+
+        else if(e.getSource()==AtomicHabits) {
             AtomicHabitsInfo atomicHabitsInfo = new AtomicHabitsInfo();
         }
         else if(e.getSource()==EgoIsTheEnemy) {
             EgoIsTheEnemyInfo egoIsTheEnemyInfo = new EgoIsTheEnemyInfo();
         }
         else if(e.getSource()==StillnessIsTheKey) {
+            StillnessIsTheKeyInfo stillnessIsTheKeyInfo = new StillnessIsTheKeyInfo();
         }
         else if(e.getSource()==SubtleArt) {
+            SubtleArtInfo subtleArtInfo = new SubtleArtInfo();
         }
         else if(e.getSource()==ArtOfWar) {
+            ArtOfWarInfo artOfWarInfo = new ArtOfWarInfo();
         }
         else if(e.getSource()==EatThatFrog) {
-        }
-        else if(e.getSource()==AuthorPOV) {
+            EatThatFrogInfo eatThatFrogInfo = new EatThatFrogInfo();
         }
         else if(e.getSource()==PsychMoney) {
+            PsychMoneyInfo psychMoneyInfo = new PsychMoneyInfo();
+        }
+        else if(e.getSource()==AuthorPOV) {
+            AuthorPOVInfo authorPOVInfo = new AuthorPOVInfo();
+        }
+        else if(e.getSource()==TBATE) {
+            TBATEInfo tbateInfo = new TBATEInfo();
+        }
+        else if(e.getSource()==ORV) {
+            ORVInfo orvInfo = new ORVInfo();
         }
     }
 }

@@ -1,8 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class EgoIsTheEnemyInfo {
-
+public class ORVInfo {
     JFrame frame;
     JPanel bookInfoPanel;
     JPanel overviewPanel;
@@ -15,55 +14,54 @@ public class EgoIsTheEnemyInfo {
     JLabel Language;
     JTextArea overview;
 
-    Books egoIsTheEnemyInfo = new Books("Ego Is The Enemy","Ryan Holiday","226","Profile Books","2016","English");
-    ImageIcon EgoIsTheEnemy = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\EgoIsTheEnemyResized.jpg");
+    Books ORVInfo = new Books("Omniscient Reader's Viewpoint","Sing Shong","513 Chapters","null","null","English");
+    ImageIcon authorPovIcon = new ImageIcon("C:\\Users\\Jonel Villaver\\Downloads\\ORVcover.jpg");
 
 
-    EgoIsTheEnemyInfo() {
+    ORVInfo() {
         frame = new JFrame();
-        frame.setTitle("Ego is the Enemy by Ryan Holiday");
-        frame.setResizable(false);
+        frame.setTitle("Omniscient Reader's Viewpoint by Sing Shong");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setResizable(false);
         frame.setSize(950,780);
         frame.getContentPane().setBackground(Color.white);
         frame.setLayout(null);
 
         bookCover = new JLabel();
         bookCover.setBounds(20,85,350,500);
-        bookCover.setIcon(EgoIsTheEnemy);
+        bookCover.setIcon(authorPovIcon);
 
         Title = new JLabel();
-        Title.setText(egoIsTheEnemyInfo.getTitle());
+        Title.setText(ORVInfo.getTitle());
         Title.setFont(new Font("Times New Roman", Font.BOLD, 28));
 
         Author = new JLabel();
-        Author.setText(egoIsTheEnemyInfo.getAuthor());
+        Author.setText(ORVInfo.getAuthor());
         Author.setFont(new Font("Times New Roman", Font.ITALIC, 20));
 
         Publisher = new JLabel();
-        Publisher.setText(egoIsTheEnemyInfo.getPublisher());
+        Publisher.setText(ORVInfo.getPublisher());
         Publisher.setFont(new Font("Times New Roman", Font.ITALIC, 20));
 
         NumberOfPages = new JLabel();
-        NumberOfPages.setText(egoIsTheEnemyInfo.getNumberOfPages());
+        NumberOfPages.setText(ORVInfo.getNumberOfPages());
         NumberOfPages.setFont(new Font("Times New Roman", Font.ITALIC, 20));
 
         YearPublished = new JLabel();
-        YearPublished.setText(egoIsTheEnemyInfo.getYearPublished());
+        YearPublished.setText(ORVInfo.getYearPublished());
         YearPublished.setFont(new Font("Times New Roman", Font.ITALIC, 20));
 
         Language = new JLabel();
-        Language.setText(egoIsTheEnemyInfo.getLanguage());
+        Language.setText(ORVInfo.getLanguage());
         Language.setFont(new Font("Times New Roman", Font.ITALIC, 20));
 
         overview = new JTextArea();
         overview.setSize(450,500);
-        overview.setText("\"              While the history books are filled with tales of obsessive, visionary geniuses who remade the world in their image with sheer, " +
-                "almost irrational force, I've found that history is also made by individuals who fought their egos at every turn, who eschewed the spotlight, " +
-                "and who put their higher goals above their desire for recognition.\" – from the Prologue\n" + "\n" + "Many of us insist the main impediment to " +
-                "a full, successful life is the outside world. In fact, the most common enemy lies within: our ego. Early in our careers, it impedes learning and the" +
-                " cultivation of talent. With success, it can blind us to our faults and sow future problems. In failure, it magnifies each blow and makes recovery more " +
-                "difficult. At every stage, ego holds us back.");
+        overview.setText("He is an average office worker who has a passion for reading, his favorite web novel being \"Three Ways to Survive in a Ruined World\". \r\n"
+                + "\r\n"
+                + "However, his life takes a drastic turn when the events of the novel start unfolding in real life, and he is the only one who is aware of how the world will come to an end. "
+
+        );
         overview.setFont(new Font("Times New Roman", Font.ITALIC, 17));
         overview.setEditable(false);
         overview.setLineWrap(true);
@@ -77,7 +75,7 @@ public class EgoIsTheEnemyInfo {
         bookInfoPanel.setOpaque(true);
         bookInfoPanel.setLayout(new FlowLayout());
         bookInfoPanel.setBackground(Color.white);
-        bookInfoPanel.setBounds(435,25,400,200);
+        bookInfoPanel.setBounds(435,25,450,200);
 
         bookInfoPanel.add(Title);
         bookInfoPanel.add(Author);

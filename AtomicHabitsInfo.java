@@ -24,6 +24,7 @@ public class AtomicHabitsInfo {
         frame.setTitle("Atomic Habit by James Clear");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(950,780);
+        frame.setResizable(false);
         frame.getContentPane().setBackground(Color.white);
         frame.setLayout(null);
 
