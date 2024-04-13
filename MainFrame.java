@@ -64,7 +64,7 @@ public class MainFrame implements ActionListener {
         label.setText("Public Library System");
         label.setFont(new Font("Helvetica", Font.BOLD, 45));
         label.setForeground(new Color(38, 89, 153));
-        label.setIconTextGap(400);
+        label.setIconTextGap(430);
         label.setBounds(30,21,1500,60);
         label.setIcon(NuLogo);
 
@@ -74,14 +74,14 @@ public class MainFrame implements ActionListener {
         label2.setBounds(1500,34,250,30);
 
         searchButton.setFocusable(false);
-        searchArea.setBounds(0,115,1800,45);
+        searchArea.setBounds(0,120,1800,45);
         searchArea.setBackground(new Color(244, 242, 201));
         searchArea.setLayout(new FlowLayout());
 
         searchBar.setFont(new Font("Helvetica", Font.PLAIN,20));
         searchBar.setPreferredSize(new Dimension(400,35));
 
-        booksContainer.setLayout(new FlowLayout());
+        booksContainer.setLayout(new GridLayout(2,4));
         booksContainer.setBounds(10, 160,1730,750);
         booksContainer.setBackground(new Color(244, 242, 201));
 
