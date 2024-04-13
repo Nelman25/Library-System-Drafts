@@ -184,7 +184,7 @@ public class MainFrame implements ActionListener {
                 case "subtle art of not giving a f*ck":
                     SubtleArtInfo info3 = new SubtleArtInfo();
                     break;
-                case "art of War":
+                case "art of war":
                     ArtOfWarInfo info4 = new ArtOfWarInfo();
                     break;
                 case "eat that frog":
@@ -193,13 +193,13 @@ public class MainFrame implements ActionListener {
                 case "psychology of money":
                     PsychMoneyInfo info6 = new PsychMoneyInfo();
                     break;
-                case "the Beginning After The End":
+                case "the beginning after the end":
                     TBATEInfo info7 = new TBATEInfo();
                     break;
-                case "omniscient Reader's Viewpoint":
+                case "omniscient reader's viewpoint":
                     ORVInfo info8 = new ORVInfo();
                     break;
-                case "author's POV":
+                case "author's pov":
                     AuthorPOVInfo info9 = new AuthorPOVInfo();
                     break;
                 default:
